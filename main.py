@@ -16,6 +16,7 @@ def divide(n1, n2):
   return(n1 / n2)
 
 operator = {"+": add, "-": subtract, "*": multiply, "/": divide}
+cont = True
 
 num1 = int(input("What is the first number?: "))
 print("What operator would you like to use?: ")
@@ -28,9 +29,18 @@ result = function(num1, num2)
 
 print(f"{num1} {symbol} {num2} = {result}")
 
-symbol2 = input("Select another operator: ")
-num3 = int(input("Whats the next number?: "))
-function = operator[symbol2]
-result2 = function(result, num3)
+keep_going = input(f"'y' to continue with {result}, or 'n' to exit  ")
+if keep_going == "n":
+  cont = False
+while cont:
+  symbol = input("Pick another operator: ")
+  num3 = int(input("What is the next number?: "))
+  function = operator[symbol]
+  new_result = function(result, num3)
 
-print(f"{result} {symbol2} {num3} = {result2}")
+  print(f"{result} {symbol} {num3} = {new_result}")
+  result = new_result
+
+  keep_going = input(f"'y' to continue with {result}, or 'n' to exit  ")
+  if keep_going == "n":
+    cont = False
