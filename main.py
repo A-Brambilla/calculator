@@ -1,4 +1,4 @@
-
+from art import logo
 
 
 
@@ -17,7 +17,10 @@ def divide(n1, n2):
 
 operator = {"+": add, "-": subtract, "*": multiply, "/": divide}
 cont = True
+def calculator():
+  print(logo)
 
+calculator()
 num1 = int(input("What is the first number?: "))
 print("What operator would you like to use?: ")
 for key in operator:
@@ -33,6 +36,7 @@ keep_going = input(f"'y' to continue with {result}, or 'n' to exit  ")
 if keep_going == "n":
   cont = False
 while cont:
+  calculator
   symbol = input("Pick another operator: ")
   num3 = int(input("What is the next number?: "))
   function = operator[symbol]
