@@ -21,12 +21,12 @@ def calculator():
   print(logo)
 
 calculator()
-num1 = int(input("What is the first number?: "))
+num1 = float(input("What is the first number?: "))
 print("What operator would you like to use?: ")
 for key in operator:
   print(key)
 symbol = input()
-num2 = int(input("What is the second number?: "))
+num2 = float(input("What is the second number?: "))
 function = operator[symbol]
 result = function(num1, num2)
 
@@ -38,7 +38,7 @@ if keep_going == "n":
 while cont:
   calculator
   symbol = input("Pick another operator: ")
-  num3 = int(input("What is the next number?: "))
+  num3 = float(input("What is the next number?: "))
   function = operator[symbol]
   new_result = function(result, num3)
 
